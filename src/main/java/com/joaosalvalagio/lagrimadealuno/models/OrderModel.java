@@ -2,14 +2,19 @@ package com.joaosalvalagio.lagrimadealuno.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Orders")
 public class OrderModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
     private String endereco;
+
+    @OneToMany
+    List<PedidoModel> pedidoList;
 
     public OrderModel() {
     }

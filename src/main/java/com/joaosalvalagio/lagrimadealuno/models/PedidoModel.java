@@ -1,15 +1,31 @@
 package com.joaosalvalagio.lagrimadealuno.models;
 
+import com.joaosalvalagio.lagrimadealuno.enums.PedidoStatus;
 import jakarta.persistence.*;
+import org.springframework.objenesis.instantiator.perc.PercInstantiator;
 
 @Entity
 @Table(name = "Pedidos")
 public class PedidoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
     private Double preco;
+
+    private PedidoStatus status;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public PedidoStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PedidoStatus status) {
+        this.status = status;
+    }
 
     public PedidoModel() {
     }
