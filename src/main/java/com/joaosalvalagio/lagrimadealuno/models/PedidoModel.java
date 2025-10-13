@@ -10,7 +10,9 @@ public class PedidoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "Nome")
     private String nome;
+    @Column(name = "Preço")
     private Double preco;
 
     private PedidoStatus status;

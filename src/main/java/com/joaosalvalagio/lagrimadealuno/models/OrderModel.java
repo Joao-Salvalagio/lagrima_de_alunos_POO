@@ -10,7 +10,9 @@ public class OrderModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "Nome")
     private String nome;
+    @Column(name = "Endereço")
     private String endereco;
 
     @OneToMany
